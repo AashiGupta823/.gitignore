@@ -1,0 +1,17 @@
+import joblib
+import pandas as pd
+
+# Load the saved pipeline
+model = joblib.load('salary_prediction_pipeline.pkl')
+
+# Example input data (adjust columns as per your model)
+sample_data = pd.DataFrame({
+    'YearsExperience': [2],
+    'EducationLevel': ['Bachelors'],
+    'Location': ['Delhi']
+})
+
+# Predict salary
+predicted_salary = model.predict(sample_data)
+
+print(f"Predicted Salary: {predicted_salary[0]}")
